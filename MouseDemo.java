@@ -10,8 +10,8 @@ import javax.swing.event.*;
  * @author Ira Goldstein
  * @version Spring 2025
  */
-public class MouseDemo implements Runnable, MouseListener, MouseMotionListener, MouseWheelListener {
-
+public class MouseDemo extends MouseAdapter implements Runnable {
+	String toDisplay = "Mouse Around and See!";
 	/**
 	 * The run method to set up the graphical user interface
 	 */
@@ -52,12 +52,11 @@ public class MouseDemo implements Runnable, MouseListener, MouseMotionListener, 
 		frame.pack();
 		frame.setVisible(true);
 	}
-
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		System.out.println("mouseClicked: " + e);
 	}
-
+	
 	@Override
 	public void mousePressed(MouseEvent e) {
 		System.out.println("mousePressed: " + e);
